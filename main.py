@@ -1,5 +1,7 @@
 from pytube import YouTube
-video_list = [ "https://www.youtube.com/watch?v=FC2dbAZcewo" ]
+urlIP=input('Enter URL:')
+video_list = [urlIP]
+#video_list = [ "https://www.youtube.com/watch?v=XHq3ZBZHznE&list=RDddaObxkRQH0&index=6" ]
 
 for i in video_list:
     try:
@@ -9,7 +11,7 @@ for i in video_list:
     except:
         print("Connection error")
 
-    stream = yt.streams.filter(fps="60fps",res="720p").first()
+    stream = yt.streams.filter(res="720p" ).first()
     stream.download(output_path="Downloads/")
 print("Task Completed")
 
